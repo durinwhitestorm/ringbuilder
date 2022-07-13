@@ -23,30 +23,37 @@ const wood = {
         'image':'https://www.wood-database.com/wp-content/uploads/acer-saccharum-225x450.jpg'
     },
 }
-const wire ={
+const metal ={
     'silver':{
-        'image':''
+        'image':'',
+        'flake image':''
     },
     'gold':{
-        'image':''
+        'image':'',
+        'flake image':''
     },
     'white gold':{
-        'image':''
+        'image':'',
+        'flake image':''
     },
     'rose gold':{
-        'image':''
+        'image':'',
+        'flake image':''
     },
     'bronze':{
-        'image':''
+        'image':'',
+        'flake image':''
     },
     'brass':{
-        'image':''
+        'image':'',
+        'flake image':''
     },
     'copper':{
-        'image':''
+        'image':'',
+        'flake image':''
     }
 }
-const preciousStone = {
+const precStone = {
     'amethyst':{
         'image':''
     },
@@ -102,6 +109,24 @@ app.get('/api/:woodType', (req, res) => {
     const woodTypes = req.params.woodType.toLowerCase()
     if(wood[woodTypes]){
         res.json(wood[woodTypes])
+    }
+})
+app.get('/api/:metalType', (req, res) => {
+    const metalTypes = req.params.metalType.toLowerCase()
+    if(metal[metalTypes]){
+        res.json(metal[metalTypes])
+    }
+})
+app.get('/api/:precStoneType', (req, res) => {
+    const precStoneTypes = req.params.precStoneType.toLowerCase()
+    if(precStone[precStoneTypes]){
+        res.json(precStone[precStoneTypes])
+    }
+})
+app.get('/api/:opalType', (req, res) => {
+    const opalTypes = req.params.opalType.toLowerCase()
+    if(opal[opalTypes]){
+        res.json(opal[opalTypes])
     }
 })
 
